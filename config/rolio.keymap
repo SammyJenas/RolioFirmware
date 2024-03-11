@@ -10,28 +10,14 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define MACOS     0
-#define FKEYS     1
-#define NUMBERS   2
-#define WINDOWS   3
-#define W_FKEYS   4
-#define W_NUMBERS 5
-#define MATHS     6
-#define KB_CONFIG 7
+#define DEFAULT   0
+#define NUM_SYM   1
+#define F_NAV     2
 
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
     behaviors {
-        // Toggle F-Keys Layer
-        // Toggle Numbers layer
-        // Toggle capsword left
-        // Toggle capsword right
-        // Toggle Windows layer
-        // Toggle Windows layer
-        // Backspace a whole word when holding backspace
-        //Mac OS Zoom
-        //Windows OS Zoom
 
         num_sym_hold_tap: num_sym_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -45,8 +31,6 @@
     };
 
     macros {
-        // Word backspace macros
-        // Zoom macros
 
         tap_layer_num: new_macro {
             compatible = "zmk,behavior-macro";
