@@ -12,14 +12,11 @@
 
 // #define HOST_OS 1  // set to 1 for Linux, default is 0 (Windows)
 
-#include "../zmk-nodefree-config/helper.h"
 
 #define DEFAULT   0
 #define NUM_SYM   1
 #define F_NAV     2
 
-ZMK_UNICODE_SINGLE(em_dash, N2, N0, N1, N4)
-ZMK_UNICODE_SINGLE(en_dash, N2, N0, N1, N3)
 
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
