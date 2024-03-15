@@ -20,8 +20,7 @@
 
 ZMK_UNICODE_SINGLE(em_dash, N2, N0, N1, N4)
 ZMK_UNICODE_SINGLE(en_dash, N2, N0, N1, N3)
-// ZMK_UNICODE_SINGLE(multip, N0, N0, D, N7)
-// ZMK_UNICODE_SINGLE(dark_l, N0, N1, N4, N2)
+
 
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
