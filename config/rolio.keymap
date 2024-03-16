@@ -68,6 +68,24 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        l_super_sft_ctrl: l_super_sft_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "L_SUPER_SFT_CTRL";
+            bindings = <&l_sup_sft_ctr>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        r_super_sft_ctrl: r_super_sft_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "R_SUPER_SFT_CTRL";
+            bindings = <&r_sup_sft_ctr>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -98,6 +116,20 @@
             bindings = <&sk RIGHT_SHIFT &sk RGUI>;
             label = "R_SHIFT_SUPER";
         };
+
+        l_sup_sft_ctr: sup_sft_ctr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LGUI &sk LSHIFT &kp LEFT_CONTROL>;
+            label = "SUP_SFT_CTR";
+        };
+
+        r_sup_sft_ctr: r_sup_sft_ctr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk RGUI &sk RIGHT_SHIFT &sk RIGHT_CONTROL>;
+            label = "R_SUP_SFT_CTR";
+        };
     };
 
     combos {
@@ -116,10 +148,10 @@
             label = "Default";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
-&kp TAB                  &kp Q  &kp W              &kp E               &kp R               &kp T                                                      &kp Y                  &kp U               &kp I             &kp O             &kp P     &kp BACKSPACE
-&mt LEFT_CONTROL ESCAPE  &kp A  &kp S              &kp D               &kp F               &kp G                                                      &kp H                  &kp J               &kp K             &kp L             &kp SEMI  &mt RIGHT_CONTROL SQT
-&none                    &kp Z  &kp X              &kp C               &kp V               &kp B                  &kp F16           &kp F17           &kp N                  &kp M               &kp COMMA         &kp DOT           &kp FSLH  &kp MINUS
-                                &mt LS(LGUI) HOME  &fnav_hold_tap 0 0  &lsft_super LGUI 0  &num_sym_hold_tap 0 0  &mt LSHIFT ENTER  &mt RSHIFT SPACE  &num_sym_hold_tap 0 0  &rsft_super RGUI 0  &mt LEFT_ALT F11  &mt RS(RGUI) END
+&kp TAB                  &kp Q  &kp W                          &kp E               &kp R               &kp T                                                      &kp Y                  &kp U               &kp I             &kp O                        &kp P     &kp BACKSPACE
+&mt LEFT_CONTROL ESCAPE  &kp A  &kp S                          &kp D               &kp F               &kp G                                                      &kp H                  &kp J               &kp K             &kp L                        &kp SEMI  &mt RIGHT_CONTROL SQT
+&none                    &kp Z  &kp X                          &kp C               &kp V               &kp B                  &kp F16           &kp F17           &kp N                  &kp M               &kp COMMA         &kp DOT                      &kp FSLH  &kp MINUS
+                                &l_super_sft_ctrl 0 PAGE_DOWN  &fnav_hold_tap 0 0  &lsft_super LGUI 0  &num_sym_hold_tap 0 0  &mt LSHIFT ENTER  &mt RSHIFT SPACE  &num_sym_hold_tap 0 0  &rsft_super RGUI 0  &mt LEFT_ALT F11  &r_super_sft_ctrl 0 PAGE_UP
             >;
         };
 
