@@ -142,6 +142,15 @@
             #binding-cells = <0>;
             bindings = <&sl 2>, <&tog 2>;
         };
+
+        final_super: final_super {
+            compatible = "zmk,behavior-hold-tap";
+            label = "FINAL_SUPER";
+            bindings = <&kp>, <&sticky_super>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -186,6 +195,13 @@
             bindings = <&sk RGUI &sk RIGHT_SHIFT &sk RIGHT_CONTROL>;
             label = "R_SUP_SFT_CTR";
         };
+
+        sticky_super: sticky_super {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sl 1 &sk LGUI>;
+            label = "STICKY_SUPER";
+        };
     };
 
     combos {
@@ -204,10 +220,10 @@
             label = "Default";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
-&kp TAB                  &kp Q  &kp W          &kp E           &kp R              &kp T                                                   &kp Y               &kp U              &kp I                    &kp O            &kp P     &kp BACKSPACE
-&mt LEFT_CONTROL ESCAPE  &kp A  &kp S          &kp D           &kp F              &kp G                                                   &kp H               &kp J              &kp K                    &kp L            &kp SEMI  &mt RIGHT_CONTROL SQT
-&kp CAPS                 &kp Z  &kp X          &kp C           &kp V              &kp B               &kp F16           &kp F17           &kp N               &kp M              &kp COMMA                &kp DOT          &kp FSLH  &kp MINUS
-                                &pgd_copy_cut  &layer_key 2 2  &mt LGUI LS(LGUI)  &num_sym_stick_tog  &mt LSHIFT ENTER  &mt RSHIFT SPACE  &num_sym_stick_tog  &mt LGUI LS(LGUI)  &mt LEFT_ALT UNDERSCORE  &pgu_paste_undo
+&kp TAB                  &kp Q  &kp W          &kp E           &kp R                &kp T                                                   &kp Y               &kp U              &kp I                    &kp O            &kp P     &kp BACKSPACE
+&mt LEFT_CONTROL ESCAPE  &kp A  &kp S          &kp D           &kp F                &kp G                                                   &kp H               &kp J              &kp K                    &kp L            &kp SEMI  &mt RIGHT_CONTROL SQT
+&kp CAPS                 &kp Z  &kp X          &kp C           &kp V                &kp B               &kp F16           &kp F17           &kp N               &kp M              &kp COMMA                &kp DOT          &kp FSLH  &kp MINUS
+                                &pgd_copy_cut  &layer_key 2 2  &final_super LGUI 0  &num_sym_stick_tog  &mt LSHIFT ENTER  &mt RSHIFT SPACE  &num_sym_stick_tog  &mt LGUI LS(LGUI)  &mt LEFT_ALT UNDERSCORE  &pgu_paste_undo
             >;
         };
 
